@@ -1,0 +1,70 @@
+<!doctype html>
+<html ng-app="todoApp" id="ng-app">
+  <head>
+
+	<title>Outlook Todo Kanban</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/json3.min.js"></script>
+  <!-- do not go >= AngularJS 1.3 since IE7 / Outlook 2010 is not supported anymore -->
+	<script src="lib/angular.min.js"></script>
+
+  <script src="application.js"></script>
+
+  <!-- services -->
+  <script src="services/todo.service.js"></script>
+  <script src="services/logging.service.js"></script>
+
+  <!-- controllers -->
+  <script src="controllers/todo.controller.js"></script>
+
+  </head>
+  <body>    
+    <div ng-if="false" class="bg-warning"><b>There seems to be a problem loading AngularJS.</b></div>   
+    <div ng-controller="TodoCtrl" ng-init="init()" class="container">
+          <div class="row">
+            <div ng-if="outsideOfOutlook" class="bg-warning"><h2>Page must be opened within Outlook.</h2></div>  
+          </div>
+          <div class="row" ng-show="!outsideOfOutlook">
+            <h2>Todos <small>{{search}}</small></h2>            
+            <input type="text" name="search" ng-model="search" class="form-control input-lg" />
+          </div>  
+          <div class="row" ng-if="!outsideOfOutlook">
+            <div class="col-md-4 col-xs-4 bg-warning">
+              <h2>Open</h2>
+              <ul class="unstyled">        
+                <li ng-repeat="todo in open | filter:search">
+                  <span ng-if="todo.priority == 2"><b>!</b> </span><span class="done-{{todo.done}}">{{todo.text}}</span>&nbsp;(<a href="#">start</a>)
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-xs-4 bg-info">
+              <h2>In Progress</h2>
+              <ul class="unstyled">        
+                <li ng-repeat="todo in inProgress | filter:search">
+                  <input type="checkbox" ng-model="todo.done">
+                  <span class="done-{{todo.done}}">{{todo.text}} (<a href="#">pause</a>)</span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-3 col-xs-3 bg-success">
+              <h2>Done</h2>
+              <ul class="unstyled">        
+                <li ng-repeat="todo in done | filter:search">
+                  <span class="done-{{todo.done}}">{{todo.text}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <ul ng-show="logs.size > 0" class="well" style="margin: 30px 24px;">
+              <li ng-repeat="log in logs">{{log}}</li>
+          </ul>
+          </div>
+      </div>
+
+</body>
+
+</html>
