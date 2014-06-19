@@ -1,6 +1,9 @@
 # Outlook Kanban
 
-Visualize your tasks.
+Visualize your tasks (very basic proof of concept).
+
+![alt text](other/screenshots/first_prototype.png "First prototype")
+![alt text](other/screenshots/first_prototype_testdata.PNG "First prototype")
 
 ## How to use
 
