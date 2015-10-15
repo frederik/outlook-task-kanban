@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<title>Outlook Kanban (ActiveX Version)</title>
+
+<!-- OUTLOOK OBJECTS FOR DATABINDING -->
+
+<OBJECT ID="CalList" CLASSID="CLSID:0468C085-CA5B-11D0-AF08-00609797F0E0">
+<PARAM NAME="Module" VALUE="Calendar"></OBJECT>
+
+<OBJECT ID="TaskList" CLASSID="CLSID:0468C085-CA5B-11D0-AF08-00609797F0E0">
+<PARAM NAME="Module" VALUE="Tasks"></OBJECT>
+
+<OBJECT ID="MailList" CLASSID="CLSID:0468C085-CA5B-11D0-AF08-00609797F0E0">
+<PARAM NAME="Module" VALUE="Inbox"></OBJECT>
+
+<script src="lib/jquery.min.js"></script>
+
+</HEAD>
+<BODY>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-xs-12">
+
+			<!---->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-xs-4 bg-warning">
+						<h2>Offen</h2>
+						<OBJECT classid=CLSID:0006F063-0000-0000-C000-000000000046 
+			                id=ViewCtlFolder style="width:100%;height: 26em;">
+			            <param name="Namespace" value="MAPI">
+			            <param name="Folder" value="Aufgaben\Offen">
+			            <param name="DeferUpdate" value="0">
+						</OBJECT>
+					</div>
+					<div class="col-md-4 col-xs-4 bg-info">
+						<h2>In Bearbeitung</h2>
+						<OBJECT classid=CLSID:0006F063-0000-0000-C000-000000000046 
+			                id=ViewCtlFolder style="width:100%;height: 26em;">
+			            <param name="Namespace" value="MAPI">
+			            <param name="Folder" value="Aufgaben\InBearbeitung">
+			            <param name="DeferUpdate" value="0">
+						</OBJECT>
+					</div>
+					<div class="col-md-4 col-xs-4 bg-success">
+						<h2>Erledigt</h2>
+						<OBJECT classid=CLSID:0006F063-0000-0000-C000-000000000046 
+			                id=ViewCtlFolder style="width:100%;height: 26em;">
+			            <param name="Namespace" value="MAPI">
+			            <param name="Folder" value="Tasks\Erledigt">
+			            <param name="DeferUpdate" value="0">
+						</OBJECT>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-xs-4">		
+						<h2>Markiert</h2>	
+						<p><span class="label">!</span>Dies sind markierte E-Mails, keine Aufgaben!</p>		
+						<OBJECT classid=CLSID:0006F063-0000-0000-C000-000000000046 
+			                id="ViewCtlFolder" style="width:100%;height: 32em;">
+			            <param name="Namespace" value="MAPI">
+			            <param name="Folder" value="Vorgangsliste">
+			            <param name="DeferUpdate" value="0">
+						</OBJECT>
+					</div>
+					<div class="col-md-4 col-xs-4">
+						<h2>Arbeitsvorrat</h2>
+						<OBJECT classid=CLSID:0006F063-0000-0000-C000-000000000046 
+			                id="ViewCtlFolder" style="width:100%;height: 32em;">
+			            <param name="Namespace" value="MAPI">
+			            <param name="Folder" value="Aufgaben">
+			            <param name="DeferUpdate" value="0">
+						</OBJECT>
+					</div>
+					<div class="col-md-4 col-xs-4">
+						<h2>Warten</h2>
+						<OBJECT classid=CLSID:0006F063-0000-0000-C000-000000000046 
+			                id="ViewCtlFolder" style="width:100%;height: 32em;">
+			            <param name="Namespace" value="MAPI">
+			            <param name="Folder" value="Aufgaben\Warten">
+			            <param name="DeferUpdate" value="0">
+						</OBJECT>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-xs-4">
+						<h2>Irgendwann</h2>
+						<OBJECT classid=CLSID:0006F063-0000-0000-C000-000000000046 
+			                id="ViewCtlFolder" style="width:100%;height: 32em;">
+			            <param name="Namespace" value="MAPI">
+			            <param name="Folder" value="Aufgaben\Irgendwann">
+			            <param name="DeferUpdate" value="0">
+						</OBJECT>
+					</div>
+					<div class="col-md-4 col-xs-4">
+						-
+					</div>
+				</div>
+			</div>
+			<!---->
+
+		</div>
+
+		<div class="col-md-1 col-xs-1">
+
+		</div>
+	</div>	
+</div>
+
+</body>
+
+</html>
