@@ -1,3 +1,7 @@
+# Maintainer needed
+
+I have no further access to Microsoft Outlook and can therefore not maintain this repo. If anyone wants to take over, please contact me.
+
 # Outlook Kanban
 
 Visualize your tasks (very basic proof of concept).
