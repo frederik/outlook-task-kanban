@@ -2,6 +2,10 @@
 
 I have no further access to Microsoft Outlook and can therefore not maintain this repo. If anyone wants to take over, please contact me.
 
+## Alternatives
+
+[outlook-taskboard](https://github.com/evrenvarol/outlook-taskboard)
+
 # Outlook Kanban
 
 Visualize your tasks (very basic proof of concept).
